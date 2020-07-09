@@ -210,16 +210,6 @@
     }
   }
 
-  @media screen and (max-width: 767px) {
-    .only-mobile {
-      display: block;
-    }
-
-    .only-desktop {
-      display: none;
-    }
-  }
-
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     .only-mobile {
       display: block;
@@ -266,6 +256,7 @@
   <script>
     $( document ).ready(function() {
       console.log( "ready!" );
+      // Number of Pokemons to Get from 0 to Number
       let numberPokemons = 20
 
       for(let i = 1; i <= numberPokemons; i++) {
@@ -274,13 +265,14 @@
           url: 'https://pokeapi.co/api/v2/pokemon/' + i,
         })
         .done(( info ) => {
+          // Prepare Items
           let types = ''
           info.types.forEach(({ type: typePokemon }) => {
             console
             types += `<span class="${typePokemon.name}">${typePokemon.name}</span>`
           });
 
-          console.log('msg :: ', info)
+          // Append Pokemon to Container
           $('#container-items').append(`
           <div class="item">
             <div class="types">${types}</div>
@@ -302,6 +294,7 @@
 
 
     $(document).on('click', 'i.fa-heart', function() {
+      // Favorite Add/Remove
       if ($(this).hasClass('add-favorite')) {
         $(this).removeClass('add-favorite')
       } else {
@@ -310,6 +303,7 @@
     });
 
     $(document).on('click', '.detail-button', function() {
+      // Calculate PRICE
       let total = $('#total-price').html();
       const pokemonPrice = parseFloat($(this).attr('data-price'))
 
@@ -319,9 +313,9 @@
 
       $('#total-price').html('$' + parseFloat(total + pokemonPrice).toFixed(2))
 
+      // Calculate Count of Items
       let totalCart = $('#total-cart').html();
       $('#total-cart').html(parseInt(totalCart) + 1)
     });
-   
   </script>
 </html>
