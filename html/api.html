@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="./src/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    padding: 60px 0;
+    background-color: #EBEBEB;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1, p.subtitle {
+    color: #2F2F2F;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  p.subtitle {
+    font-weight: 300;
+    line-height: 1.7rem;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-gap: 20px;
+    justify-content: center;
+    margin: 50px auto auto auto;
+  }
+
+  .container div.item {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+  }
+
+  .container div.item .types span {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #FFF;
+    font-size: 12px;
+  }
+  .container div.item .types .grass {
+    background-color: #78C850;
+  }
+
+  .container div.item .types .fire {
+    background-color: #F08030;
+  }
+
+  .container div.item .types .poison {
+    background-color: #A040A0;
+  }
+
+  .container div.item .types .bug {
+    background-color: #A8B820;
+  }
+
+  .container div.item .types .water {
+    background-color: #6890F0;
+  }
+
+  .container div.item .types .flying {
+    background-color: #A890F0;
+  }
+
+  .container div.item .types .normal {
+    background-color: #A8A878;
+  }
+
+  .container div.item:hover {
+    box-shadow: 6px 7px 17px -10px rgba(0,0,0,0.67);
+  }
+
+  .container div.item i.fa-heart {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 100%;
+    padding: 5px;
+    background-color: #fff;
+  }
+
+  .container div.item img {
+    object-fit: contain;
+    max-height: 160px;
+  }
+
+  .container .item p.title {
+    font-size: xx-large;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
+
+  .container .item p.actual-price { 
+    font-weight: 700;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .container .item a.detail-button {
+    border-radius: 20px;
+    text-decoration: none;
+    background-color: #4DBD3D;
+    padding: 10px;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    text-transform: uppercase;
+  }
+
+  .container .item a.detail-button:hover {
+    background-color: blue;
+  }
+
+  .container .item a.detail-button i.fa-shopping-basket {
+    margin-right: 10px;
+  }
+
+  /* UTILS */
+
+  .max-width-fluid {
+    max-width: 50%;
+  }
+
+  .add-favorite {
+    color: red;
+  }
+
+  main > div {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  div#shopping {
+    font-size: 50px;
+  }
+
+  div#shopping i,
+  div#shopping span {
+    margin-right: 10px;
+  }
+
+  /* MEDIA QUERY */
+  @media screen and (max-width: 767px) {
+    .max-width-fluid {
+      max-width: 90%;
+    }
+
+    .container {
+      grid-template-columns: repeat(2, 150px);
+    }
+
+    .container div.item img {
+      object-fit: scale-down;
+      max-height: 100px;
+    }
+
+    .container .item p.title {
+      font-size: 12px;
+    }
+
+    .container .item a.detail-button {
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+
+    .container .item p.actual-price { 
+      font-size: 20px;
+    }
+
+    main > div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    div#shopping {
+      display: flex;
+      justify-content: center;
+    }
+
+    div#shopping {
+      font-size: 30px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .only-mobile {
+      display: block;
+    }
+
+    .only-desktop {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .only-mobile {
+      display: block;
+    }
+
+    .only-desktop {
+      display: none;
+    }
+
+    main > div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    div#shopping {
+      display: flex;
+      justify-content: center;
+    }
+
+    div#shopping {
+      font-size: 40px;
+    }
+  }
+</style>
+<body>
+  <main>
+    <div>
+      <h1>Tienda Pokemon</h1>
+      <div id="shopping">
+        <i class="fas fa-shopping-basket"></i> <span id="total-cart">00</span>
+        <i class="fas fa-cash-register"></i> <span id="total-price">$00.00</span>
+      </div>
+    </div>
+    
+    <div id="container-items" class="container"></div>
+  </main>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+  <script>
+    $( document ).ready(function() {
+      console.log( "ready!" );
+      let numberPokemons = 20
+
+      for(let i = 1; i <= numberPokemons; i++) {
+        $.ajax({
+          method: 'GET',
+          url: 'https://pokeapi.co/api/v2/pokemon/' + i,
+        })
+        .done(( info ) => {
+          let types = ''
+          info.types.forEach(({ type: typePokemon }) => {
+            console
+            types += `<span class="${typePokemon.name}">${typePokemon.name}</span>`
+          });
+
+          console.log('msg :: ', info)
+          $('#container-items').append(`
+          <div class="item">
+            <div class="types">${types}</div>
+            <i class="fas fa-heart"></i>
+            <img src="${info.sprites.front_default}" />
+            <p class="title">${info.name}</p>
+
+            <p class="actual-price">$${info.weight}.99</p>
+
+            <a class="detail-button" href="#" data-price="${info.weight}.99">
+              <i class="fas fa-shopping-basket"></i>
+              <span>Agregar</span>
+            </a>
+          </div>
+          `);
+        });
+      }
+    });
+
+
+    $(document).on('click', 'i.fa-heart', function() {
+      if ($(this).hasClass('add-favorite')) {
+        $(this).removeClass('add-favorite')
+      } else {
+        $(this).addClass('add-favorite')
+      }
+    });
+
+    $(document).on('click', '.detail-button', function() {
+      let total = $('#total-price').html();
+      const pokemonPrice = parseFloat($(this).attr('data-price'))
+
+      total = parseFloat(total.substr(1, total.length))
+
+      console.log('detail-button', total)
+
+      $('#total-price').html('$' + parseFloat(total + pokemonPrice).toFixed(2))
+
+      let totalCart = $('#total-cart').html();
+      $('#total-cart').html(parseInt(totalCart) + 1)
+    });
+   
+  </script>
+</html>
