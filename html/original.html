@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    padding: 60px 0;
+    background-color: #EBEBEB;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1, p.subtitle {
+    color: #2F2F2F;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  p.subtitle {
+    font-weight: 300;
+    line-height: 1.7rem;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    grid-gap: 20px;
+    justify-content: center;
+    margin: 50px auto auto auto;
+  }
+
+  .container div.item {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+    padding: 20px;
+  }
+
+  .container div.item img {
+    object-fit: cover;
+    max-height: 160px;
+  }
+
+  .container .item p.title {
+    margin-bottom: 1rem;
+  }
+
+  .container .item p.original-price {
+    font-size: 15px;
+    font-weight: 300;
+    color: #B8B8B8;
+    margin-bottom: 0.5rem;
+  }
+
+  .container .item p.actual-price { 
+    font-weight: 700;
+    font-size: 23px;
+    margin-bottom: 1rem;
+  }
+
+  .container .item a.detail-button {
+    border-radius: 20px;
+    text-decoration: none;
+    background-color: #4DBD3D;
+    padding: 10px;
+    color: #FFF;
+    text-align: center;
+    font-size: 17px;
+    text-transform: uppercase;
+  }
+
+  /* UTILS */
+  .only-desktop {
+    display: block;
+  }
+
+  .only-mobile {
+    display: none;
+  }
+
+  .max-width-fluid {
+    max-width: 50%;
+  }
+
+  /* MEDIA QUERY */
+  @media screen and (max-width: 767px) {
+    .only-mobile {
+      display: block;
+    }
+
+    .only-desktop {
+      display: none;
+    }
+
+    .max-width-fluid {
+      max-width: 90%;
+    }
+
+    .container {
+      grid-template-columns: repeat(2, 150px);
+    }
+
+    .container div.item img {
+      object-fit: scale-down;
+      max-height: 100px;
+    }
+
+    .container .item p.title {
+      font-size: 12px;
+    }
+
+    .container .item a.detail-button {
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+
+    .container .item p.actual-price { 
+      font-size: 20px;
+    }
+
+    .container .item p.original-price {
+      font-size: 12px;
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .only-mobile {
+      display: block;
+    }
+
+    .only-desktop {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .only-mobile {
+      display: block;
+    }
+
+    .only-desktop {
+      display: none;
+    }
+  }
+</style>
+<body>
+  <main>
+    <h1>Double Solutions Test</h1>
+    <p class="subtitle max-width-fluid">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus consequat neque, vitae iaculis dolor molestie ut. Vestibulum condimentum, velit sit amet dignissim vestibulum, purus magna auctor eros, nec facilisis.</p>
+    
+    <div class="container">
+      <div class="item">
+        <img src="src/img/item.jpg" />
+        <p class="title">Paragolpe delantero adaptable</p>
+
+        <p class="original-price">Antes $2.626</p>
+        <p class="actual-price">$2.101</p>
+
+        <a class="detail-button" href="#">
+          <span class="only-desktop">Ver Detalles</span>
+          <span class="only-mobile">Comprar</span>
+        </a>
+      </div>
+      <div class="item">
+        <img src="src/img/item.jpg" />
+        <p class="title">Paragolpe delantero adaptable</p>
+
+        <p class="original-price">Antes $2.626</p>
+        <p class="actual-price">$2.101</p>
+
+        <a class="detail-button" href="#">
+          <span class="only-desktop">Ver Detalles</span>
+          <span class="only-mobile">Comprar</span>
+        </a>
+      </div>
+      <div class="item">
+        <img src="src/img/item.jpg" />
+        <p class="title">Paragolpe delantero adaptable</p>
+
+        <p class="original-price">Antes $2.626</p>
+        <p class="actual-price">$2.101</p>
+
+        <a class="detail-button" href="#">
+          <span class="only-desktop">Ver Detalles</span>
+          <span class="only-mobile">Comprar</span>
+        </a>
+      </div>
+      <div class="item">
+        <img src="src/img/item.jpg" />
+        <p class="title">Paragolpe delantero adaptable</p>
+
+        <p class="original-price">Antes $2.626</p>
+        <p class="actual-price">$2.101</p>
+
+        <a class="detail-button" href="#">
+          <span class="only-desktop">Ver Detalles</span>
+          <span class="only-mobile">Comprar</span>
+        </a>
+      </div>
+      <div class="item">
+        <img src="src/img/item.jpg" />
+        <p class="title">Paragolpe delantero adaptable</p>
+
+        <p class="original-price">Antes $2.626</p>
+        <p class="actual-price">$2.101</p>
+
+        <a class="detail-button" href="#">
+          <span class="only-desktop">Ver Detalles</span>
+          <span class="only-mobile">Comprar</span>
+        </a>
+      </div>
+      <div class="item">
+        <img src="src/img/item.jpg" />
+        <p class="title">Paragolpe delantero adaptable</p>
+
+        <p class="original-price">Antes $2.626</p>
+        <p class="actual-price">$2.101</p>
+
+        <a class="detail-button" href="#">
+          <span class="only-desktop">Ver Detalles</span>
+          <span class="only-mobile">Comprar</span>
+        </a>
+      </div>
+      <div class="item">
+        <img src="src/img/item.jpg" />
+        <p class="title">Paragolpe delantero adaptable</p>
+
+        <p class="original-price">Antes $2.626</p>
+        <p class="actual-price">$2.101</p>
+
+        <a class="detail-button" href="#">
+          <span class="only-desktop">Ver Detalles</span>
+          <span class="only-mobile">Comprar</span>
+        </a>
+      </div>
+      <div class="item">
+        <img src="src/img/item.jpg" />
+        <p class="title">Paragolpe delantero adaptable</p>
+
+        <p class="original-price">Antes $2.626</p>
+        <p class="actual-price">$2.101</p>
+
+        <a class="detail-button" href="#">
+          <span class="only-desktop">Ver Detalles</span>
+          <span class="only-mobile">Comprar</span>
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
